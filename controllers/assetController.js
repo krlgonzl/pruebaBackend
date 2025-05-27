@@ -42,6 +42,7 @@ exports.createAsset = async (req, res) => {
 };
 
 exports.getAssets = async (req, res) => {
+    console.log('Llego petición para obtener activos');
   try {
     const assets = await Asset.findAll({
       where: { deleted_at: null },
@@ -52,6 +53,7 @@ exports.getAssets = async (req, res) => {
       }],
       order: [['created_at', 'DESC']]
     });
+  console.log(`📦 Encontrados ${assets.length} activos`);
     res.json(assets);
   } catch (error) {
     res.status(500).json({ error: error.message });

@@ -1,4 +1,4 @@
-const sequelize = require('./config/database');
+const sequelize = require('../config/database');
 const Area = require('./area');
 const Custodio = require('./custodio');
 const Asset = require('./Asset');
